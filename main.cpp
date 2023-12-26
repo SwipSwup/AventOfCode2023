@@ -2,11 +2,6 @@
 #include <fstream>
 #include <vector>
 
-int main()
-{
-    return 0;
-}
-
 std::vector<std::string> getInput()
 {
     std::vector<std::string> vector;
@@ -21,10 +16,21 @@ std::vector<std::string> getInput()
     std::string line;
     while (getline(file, line))
     {
-        std::cout << line << std::endl;
+        vector.push_back(line);
     }
 
     file.close();
     return vector;
 }
 
+int main()
+{
+    const std::vector<std::string> lines = getInput();
+
+    for (int i = 0; i < lines.size(); ++i)
+    {
+        std::cout << lines.at(i) << std::endl;
+    }
+
+    return 0;
+}
